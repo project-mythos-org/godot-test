@@ -4,7 +4,10 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"ms-dotnettools.csharp", "ms-vscode.mono-debug",
-		"neikeq.godot-csharp-vscode", "geequlim.godot-tools"
+		"ms-dotnettools.csharp",
+		"ms-vscode.mono-debug",
+		"neikeq.godot-csharp-vscode",
+		"geequlim.godot-tools",
+		"github.vscode-pull-request-github"
 	],
 }
