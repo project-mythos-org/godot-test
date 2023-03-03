@@ -16,7 +16,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "C:\\Program Files\\Godot\\Godot_v4.0-stable_mono_win64.exe",
+            "executable": "${workspaceRoot}\\Godot_v4.0-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}"
@@ -28,7 +28,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "C:\\Program Files\\Godot\\Godot_v4.0-stable_mono_win64.exe",
+            "executable": "${workspaceRoot}\\Godot_v4.0-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}",
