@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://2s5lmasvdjg1"]
+
+[ext_resource type="Script" path="res://PlayerBody.cs" id="1_loxw2"]
+[ext_resource type="Script" path="res://Main.cs" id="1_yfxva"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5d3dt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dacc5"]
+radius = 0.125
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_66qao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ou1a"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_axu4y"]
+size = Vector3(60, 2, 60)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_yfxva")
+
+[node name="PlayerBody" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_loxw2")
+
+[node name="PlayerCollider" type="CollisionShape3D" parent="PlayerBody"]
+shape = SubResource("CapsuleShape3D_5d3dt")
+
+[node name="PlayerCamera" type="Camera3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="PlayerBody/PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.577507, -0.455252, -1)
+mesh = SubResource("CapsuleMesh_dacc5")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="PlayerBody"]
+mesh = SubResource("CapsuleMesh_66qao")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="GroundCollider" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_6ou1a")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_axu4y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.748004, -0.195222, 0.634333, -0.0895157, 0.917352, 0.387881, -0.65763, -0.346919, 0.668707, 23.47, 35.3387, 23.6558)
