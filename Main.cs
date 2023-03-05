@@ -3,9 +3,14 @@ using System;
 
 public partial class Main : Node3D
 {
+    [Export(PropertyHint.File)]
+    public string PlayerScenePath;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (PlayerScenePath is null) PlayerScenePath = "res://PlayerFirst/player_first.tscn";
+        AddChild(GD.Load<PackedScene>(PlayerScenePath).Instantiate());
         Input.MouseMode = Input.MouseModeEnum.Captured;
     }
 
